@@ -1,0 +1,205 @@
+<!--pages/admin_UploadGoods/admin_UploadGoods.wxml-->
+<van-notice-bar  color="#1989fa" background="#ecf9ff" left-icon="info-o" mode="link" text="如需帮助请点击右侧箭头跳转" url="../TeSupport/TeSupport" />
+  <!-- 商品基本信息 -->
+<view class="dis-flex_flex-col_just-fsta pad_box">
+  <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >商品基本信息</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品名称：</text>
+      <input class="text" type="text" placeholder="请输入商品名称" data-message="name" bindinput="input_goodsMessage"/>    
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品原价：</text>
+      <input class="text" type="text" placeholder="请输入商品原价" data-message="pro_price" bindinput="input_goodsMessage"/>    
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品现价（打折价）：</text>
+      <input class="text" type="text" placeholder="请输入商品现价（打折价）" data-message=price" bindinput="input_goodsMessage"/>    
+    </view>
+  </view>
+    <!-- 商品规格 -->
+    <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >商品规格</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品规格：</text>
+      <van-button icon = "plus" class="btn_van" type="primary" style="margin-left: 30rpx;" bind:click="inputSpe_open" ></van-button>
+    </view>
+  </view>
+  <!-- 商品分类 -->
+  <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >商品分类</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品分类</text>
+      <van-button icon = "plus" class="btn_van" type="primary" style="margin-left: 30rpx;" bind:click="inputCategory_open" ></van-button>
+    </view>
+  </view>
+   <!-- 商品discount -->
+   <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >商品标签</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品标签</text>
+      <van-button icon = "plus" class="btn_van" type="primary" style="margin-left: 30rpx;" bind:click="inputDiscount_open" ></van-button>
+    </view>
+  </view>
+  <!-- 商品轮播图 -->
+  <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >轮播图</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >轮播图：</text>
+      <van-button icon = "plus" class="btn_van" type="primary" style="margin-left: 30rpx;" bind:click="inputSwiper_open" ></van-button>
+    </view>
+  </view>
+   <!-- 商品详情页 -->
+   <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >详情页图片</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >详情页图片：</text>
+      <van-button icon = "plus" class="btn_van" type="primary" style="margin-left: 30rpx;" bind:click="inputDetails_open" ></van-button>
+    </view>
+  </view>
+  <!-- 上传 -->
+  <view class="dis-flex_flex-col_just-cen" style="height: 300rpx;">
+    <button style="background-color:#07c160; color: #fff;  width: 600rpx;"bindtap="Total_upload">上传</button>
+  </view>
+</view>
+<!-- 商品规格弹窗 -->
+<van-popup show="{{ if_spe }}" round position="bottom" closeable custom-style="height:70%;" bind:close="inputSpe_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商品规格</text>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 80rpx;">
+      <van-icon name="new-o"  size="35px" />
+      <input type="text" placeholder="请输入商品规格" style="margin-left: 10rpx; text-align: center;"  value="{{inpu_spe}}"
+       data-message="input_spe" bindinput="input_goodsMessage" />
+       <button style="background-color:#07c160; color: #fff; width: 20%; margin-top: 10rpx;margin-left: 40rpx;"
+        bindtap="add_spe">添加</button>
+    </view>
+    <van-divider style="width:70%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+    <text class="text dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;margin-bottom: 20rpx;" >目前添加的商品规格如下：</text>
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;">
+      <block wx:for="{{spe}}" wx:key="index">   
+        <view class="spe_case  dis-flex_flex-col_just-cen">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</van-popup>
+<!-- 商品标签弹窗 -->
+<van-popup show="{{ if_discount }}" round position="bottom" closeable custom-style="height:70%;" bind:close="inputDiscount_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商品标签</text>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 80rpx;">
+      <van-icon name="new-o"  size="35px" />
+      <input type="text" placeholder="请输入例如 天然有机" style="margin-left: 10rpx; text-align: center;"  value="{{input_discount}}"
+       data-message="input_discount" bindinput="input_goodsMessage" />
+       <button style="background-color:#07c160; color: #fff; width: 20%; margin-top: 10rpx;margin-left: 40rpx;"
+        bindtap="add_discount">添加</button>
+    </view>
+    <van-divider style="width:70%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+    <view class="text dis-flex_flex-row_just-fsta">
+        <text class="text dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;margin-bottom: 20rpx;" >目前添加的标签如下：</text>
+        <van-tag class="text dis-flex_flex-row_just-sapbet" size="large" round type="primary">标签两个字、四个字最佳</van-tag>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;">
+      <block wx:for="{{discount}}" wx:key="index">   
+        <view class="spe_case  dis-flex_flex-col_just-cen">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</van-popup>
+<!-- 商品分类弹窗 -->
+<van-popup show="{{ if_category }}" round position="bottom" closeable custom-style="height:70%;" bind:close="inputCategory_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商品分类</text>
+    </view>
+    <van-divider style="width:70%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta warp category_case" >
+    <!-- direction="horizontal" -->
+      <van-radio-group value="{{ category }}"  bind:change="select_radio">
+        <block wx:for="{{category}}" wx:key="index">
+          <!-- <van-radio name="{{item.name}}">{{item.name}}</van-radio> -->
+          <van-cell-group style="width: 400rpx;" class="vancell_case"> 
+              <van-cell title="{{item.name}}" clickable data-name="{{item.name}}" >
+                    <van-radio checked-color="#07c160" icon-size="30px" slot="right-icon" name="{{item.name}}" /> 
+               </van-cell> 
+           </van-cell-group> 
+        </block>   
+      </van-radio-group>
+    </view>
+  </view>
+</van-popup>
+<!-- 商品轮播图弹窗 -->
+<van-popup show="{{ if_swiper }}" round position="bottom" closeable custom-style="height:70%;" bind:close="inputSwiper_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商品轮播图</text>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 80rpx;">
+      <van-icon name="new-o"  size="35px" />
+      <text style="margin-left: 40rpx;margin-right: 30rpx;">点击右侧按钮选择图片</text>
+       <button style="background-color:#07c160; color: #fff; width: 20%; margin-top: 10rpx;margin-left: 40rpx;"
+        bindtap="add_swiper">添加</button>
+    </view>
+    <view class="text dis-flex_flex-row_just-fsta">
+        <text class="text dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;margin-bottom: 20rpx;" >目前添加的轮播图如下：</text>
+        <van-tag class="text dis-flex_flex-row_just-sapbet" size="large" round type="primary">长按图片即可删除</van-tag>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;">
+      <block wx:for="{{url}}" wx:key="index">   
+          <image src="{{item}}" class="swiper_img_case" data-index="{{index}}" bindlongpress="delete_swiper_img"></image>
+      </block>
+    </view>
+    <!-- <button style="background-color:#41924B; color: #fff; width: 70%; margin-top: 120rpx;" bindtap="loginInto">上传</button> -->
+  </view>
+</van-popup>
+<!-- 商品详情页弹窗 -->
+<van-popup show="{{ if_details }}" round position="bottom" closeable custom-style="height:70%;" bind:close="inputDetails_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商品详情页</text>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 80rpx;">
+      <van-icon name="new-o"  size="35px" />
+      <text style="margin-left: 40rpx;margin-right: 30rpx;">点击右侧按钮选择图片</text>
+       <button style="background-color:#07c160; color: #fff; width: 20%; margin-top: 10rpx;margin-left: 40rpx;"
+        bindtap="add_details">添加</button>
+    </view>
+    <view class="text dis-flex_flex-row_just-fsta">
+        <text class="text dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;margin-bottom: 20rpx;" >目前添加的详情页如下：</text>
+        <van-tag class="text dis-flex_flex-row_just-sapbet" size="large" round type="primary">长按图片即可删除</van-tag>
+    </view>
+  
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;">
+      <block wx:for="{{details_img}}" wx:key="index">   
+          <image src="{{item}}" class="details_img_case" mode="widthFix" data-name="details_img" bindlongpress="delete_details_img"></image>
+      </block>
+    </view>
+    <!-- <button style="background-color:#41924B; color: #fff; width: 70%; margin-top: 120rpx;" bindtap="loginInto">上传</button> -->
+  </view>
+</van-popup>

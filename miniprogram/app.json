@@ -1,0 +1,102 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/OrderMessage/OrderMessage",
+    "pages/user/user",
+    "pages/car/car",
+    "pages/submitOrder/submitOrder",
+    "pages/productsDetail/productsDetail",
+    "pages/market/market",
+    "pages/after_sales/after_sales",
+    "pages/admin/admin",
+    "pages/user_enroll/user_enroll",
+    "pages/user_enroll_businesses/user_enroll_businesses",
+    "pages/user_enroll_subscriber/user_enroll_subscriber",
+    "pages/user_message_upload/user_message_upload",
+    "pages/Problemc_sub/Problemc_sub",
+    "pages/Qr_code/Qr_code",
+
+    "pages/video/video",
+    "pages/policy/policy",
+    "pages/publicize/publicize",
+    "pages/sp_video/sp_video",
+
+    "pages/customer/customer",
+    "pages/admin_UploadGoods/admin_UploadGoods",
+    "pages/admin_ManageGoods/admin_ManageGoods",
+    "pages/TeSupport/TeSupport",
+    "pages/admin_statistics/admin_statistics"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#41924B",
+    "navigationBarTitleText": "绿沁之城",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "2de3a1",
+    "list": [
+        {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "/images/index-icon/index.png",
+            "selectedIconPath": "images/index-icon-select/index_s.png"
+        },
+        {
+            "pagePath": "pages/market/market",
+            "text": "市场",
+            "iconPath": "/images/index-icon/shop.png",
+            "selectedIconPath": "images/index-icon-select/shop_s.png"
+        },
+        {
+            "pagePath": "pages/publicize/publicize",
+            "text": "视频",
+            "iconPath": "/images/index-icon/sp.png",
+            "selectedIconPath": "images/index-icon-select/sp_s.png"
+      },
+        {
+            "pagePath": "pages/user/user",
+            "text": "我的",
+            "iconPath": "/images/index-icon/user.png",
+            "selectedIconPath": "images/index-icon-select/user_s.png"
+        }
+    ]
+},
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+
+}

@@ -1,0 +1,45 @@
+<!--pages/admin/admin.wxml-->
+<van-notice-bar  left-icon="volume-o" mode="link" text="上传商品出现问题还请及时申请技术支持---如需帮助请点击右侧箭头跳转" url="../TeSupport/TeSupport" />
+
+<view class="dis-flex_flex-col_just-cen pad_box ab_case"> 
+      <view class="dis-flex_flex-row_just-fsta">
+        <text style="font-size:30rpx;color: #888888;  padding-left: 30rpx;" 
+        class="dis-flex_flex-row_just-fsta"> 商品管理</text>
+      </view>
+      <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <!-- 第一行 -->
+   
+    <view class="dis-flex_flex-row_just-sapbet ab_row">
+     <!--  -->
+     <navigator class="dis-flex_flex-col_just-cen ab_item" url="../admin_UploadGoods/admin_UploadGoods">
+      <image src="../../images/service_img/upload.png" class="ab_img"></image>
+      <text>上传商品</text>
+    </navigator>
+
+      <navigator class="dis-flex_flex-col_just-cen ab_item" url="../admin_ManageGoods/admin_ManageGoods">
+        <image src="../../images/service_img/search.png" class="ab_img"></image>
+        <text>产品查询</text>
+      </navigator>
+
+      <navigator class="dis-flex_flex-col_just-cen ab_item" url="../admin_statistics/admin_statistics">
+        <image src="../../images/service_img/collection.png" class="ab_img"></image>
+        <text>订单信息中心</text>
+      </navigator>
+
+    </view>
+    <!-- 第二行 -->
+    <!-- <view class="dis-flex_flex-row_just-sapbet ab_row">
+      <view class="dis-flex_flex-col_just-cen ab_item">
+        <image src="../../images/user/changeMessage.png" class="ab_img"></image>
+        <text>用户信息修改</text>
+      </view>
+      <view class="dis-flex_flex-col_just-cen ab_item">
+        <image src="../../images/user/changeMessage.png" class="ab_img"></image>
+        <text>用户信息修改</text>
+      </view>
+      <view class="dis-flex_flex-col_just-cen ab_item">
+        <image src="../../images/user/changeMessage.png" class="ab_img"></image>
+        <text>用户信息修改</text>
+      </view>
+    </view> -->
+  </view>

@@ -1,0 +1,173 @@
+<!-- 搜索栏 -->
+<van-search value="{{ value }}" placeholder="水蜜桃-桃子节特惠、奶油草莓、红心蜜柚" shape="round"   bind:change="search" background="#41924B" bind:focus="open_search_box" bind:blur="close_search_box"> 
+</van-search>
+<view class="dis-flex_flex-col_just-cen" wx:if="{{if_open_search_box}}" bind:focus="open_search_box"  >
+  <view class="dis-flex_flex-col_just-fsta case pad_box search_box">
+
+    <van-empty image="error" style="margin-top: -120rpx;" description="查点其他的商品吧"
+    wx:if="{{search_list.length==0}}" />
+    <scroll-view style="width:100%;height: 100%;" scroll-y="true" wx:else >
+      <view class="dis-flex_flex-col_just-fsta">
+        <block wx:for="{{search_list}}" wx:key="index"> 
+            <view class="dis-flex_flex-row_just-sapbet" bindtap="click" data-id="{{item._id}}">
+              <image class="show_search_img "src="{{item.url[0]}}" ></image>
+              <text>{{item.name}}</text>
+              <text class="price">￥：{{item.price}}</text>
+            </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- <van-search
+  value="{{ value }}"
+  label=""
+  placeholder="福州茉莉花茶、龙岩花生、安溪铁观音"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  background="#41924B"
+>
+</van-search> -->
+<!-- 轮播图背景 -->
+<view style=" border-radius:0rpx 0rpx 30rpx 30rpx; width: 100%;height: 220rpx;background: #41924B;">
+<!-- inear-gradient(to right,#e9d293,#f5d57d,#f5d170, #f5c33a); -->
+</view>
+<!-- 轮播图 -->
+<view class="swiper_box" >
+       <!-- <image id="#swiper_box_color"mode="aspectFill" src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/image/back.png"> </image> -->
+      <swiper class="swiper" indicator-dots='true' autoplay='true' interval='3000' duration='1000' circular='true' >
+            <block wx:for="{{swiper}}" wx:key="index">
+              <swiper-item>
+                <!-- {{currentIndex == index ? 'active': ''}} -->
+                  <image src="{{item.url}}" class="swiper_img"></image>
+              </swiper-item>
+            </block>
+      </swiper>
+</view>
+
+<!-- index_big_img_粮油 -->
+<view class="index_big_img_title dis-flex_flex-col_just-fsta" >
+          <text>粮油新选</text>
+</view>
+<navigator url="../productsDetail/productsDetail?id=b69f67c062a601cc06e78b9850c59662">
+  <image class="index_big_img" mode="aspectFit" src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/index_big_img_rice.png"></image>
+</navigator>
+<!-- 粮油新选 -->
+<view class="show">
+    <view class="show_box">
+          <navigator class="show_le" url="../productsDetail/productsDetail?id=0ab5303b62a6004b08ff39ec5fe3708c">
+              <image class="show_le_img"  src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_show/yumi.png"></image>
+          </navigator>
+          <navigator class="show_le" url="../productsDetail/productsDetail?id=ca780ad562a836f907323e1309ad8a29">
+              <image class="show_le_img"  src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/菜籽油index.png"></image>
+          </navigator>
+    </view>     
+</view>
+
+<!-- index_big_img_果蔬 -->
+<view class="index_big_img_title dis-flex_flex-col_just-fsta" >
+          <text>果蔬直选</text>
+</view>
+<navigator url="../productsDetail/productsDetail?id=8f75309d62a5c891083424d9145daea5">
+  <image class="index_big_img" mode="aspectFit" src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/index_big_img_fruits.png"></image>
+</navigator>
+<!-- 果蔬直选 -->
+<view class="show">
+  <view class="show_box">
+      <view class="show_rt">
+            <navigator class="show_rt_up" url="../productsDetail/productsDetail?id=0a4ec1f962a5b6340a162e3c6f1e0122">
+               <image  class="show_rt_up_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_show/caomei.png"></image>
+            </navigator>
+            <navigator class="show_rt_down" url="../productsDetail/productsDetail?id=16db756f62a5c7f506cbe8b877e7687e">
+               <image  class="show_rt_down_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/菠萝index.png"></image>
+            </navigator>
+    </view>
+    <view class="show_rt">
+      <navigator class="show_rt_up" url="../productsDetail/productsDetail?id=16db756f62a5b6d806ca59ce7c2d3870">
+               <image  class="show_rt_up_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_show/taozi.png"></image>
+            </navigator>
+            <navigator class="show_rt_down" url="../productsDetail/productsDetail?id=16db756f628f7b1a04add8290f98276e">
+               <image  class="show_rt_down_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/西红柿index.png"></image>
+            </navigator>
+    </view>
+  </view>     
+</view>
+<!-- index_big_img_肉蛋 -->
+<view class="index_big_img_title dis-flex_flex-col_just-fsta" >
+          <text>畜禽优选</text>
+</view>
+<navigator url="../productsDetail/productsDetail?id=8f75309d62a5c891083424d9145daea5">
+  <image class="index_big_img" mode="aspectFit" src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/index_big_img_meet.png"></image>
+</navigator>
+
+<!-- 畜禽优选 -->
+<view class="show">
+    <view class="show_box">
+          <navigator class="show_le" url="../productsDetail/productsDetail?id=6842667962a8381e05c448cb400d5185">
+              <image class="show_le_img"  src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/排骨index.png"></image>
+          </navigator>
+          <navigator class="show_le" url="../productsDetail/productsDetail?id=0a4ec1f962a837920a73ba5446a0bc99">
+              <image class="show_le_img"  src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/牛肉index.png"></image>
+          </navigator>
+    </view>     
+</view>
+
+<!-- index_big_img_特产 -->
+<view class="index_big_img_title dis-flex_flex-col_just-fsta" >
+          <text>特产精选</text>
+</view>
+<navigator url="../productsDetail/productsDetail?id=6d85a2b9628f7bb106fa0ddf79bcac21">
+  <image class="index_big_img" mode="aspectFit" src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/index_big_img_home.png"></image>
+</navigator>
+<!-- 特产精选 -->
+<view class="show">
+    <view class="show_box">
+      <view class="show_rt">
+            <navigator class="show_rt_up" url="../productsDetail/productsDetail?id=058dfefe62a838f508b706eb67177b40">
+               <image  class="show_rt_up_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/黄桃罐头index.png"></image>
+            </navigator>
+            <navigator class="show_rt_down" url="../productsDetail/productsDetail?id=f6e08a64628eeb25053894d87c14b9db">
+               <image  class="show_rt_down_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/蜂蜜index.png"></image>
+            </navigator>
+      </view>
+          <view class="show_rt">
+            <navigator class="show_rt_up" url="../productsDetail/productsDetail?id=0ab5303b62a6035108ff809c1491d7a3">
+               <image  class="show_rt_up_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/鸭蛋index.png"></image>
+            </navigator>
+            <navigator class="show_rt_down" url="../productsDetail/productsDetail?id=6d85a2b962a8386e0a85753c7410456a">
+               <image  class="show_rt_down_img"   src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/竹笋index.png"></image>
+            </navigator>
+          </view>
+    </view>     
+</view>
+
+<!-- 商品推送列表 -->
+<view class="shopping" >
+  <view class="shopping_title">
+          <text>特价推送</text>
+  </view>
+  <view class="shopping_total">
+    <block wx:for="{{shopping_products}}" wx:key="index"> 
+      <navigator class="productsDetail" url="../productsDetail/productsDetail?id={{item._id}}"> 
+          <view class="shopping_detail">
+            <image src="{{item.url[0]}}"  class="shopping_img"></image>
+            <view class="shopping_name">
+              <text>{{item.name}}</text>
+            </view>
+            <view class="shopping_price">
+              <view >
+                <text style="color: #888;font-size: 25rpx;margin-left: 15rpx; text-decoration: line-through;" >{{item.pro_price}}</text>
+                <text style="color: red">￥:{{item.price}}</text>
+              </view>
+              <van-icon name="fire-o"color="#ee0a24"  size="40rpx" />
+              <van-icon class="shopping_icon" name="cart-circle-o" color="#41924B" size="70rpx" />
+            </view>
+          </view>   
+        </navigator>
+    </block>
+  </view>
+</view>
+
+
+<view style="width:100%;height: 100rpx;"></view>

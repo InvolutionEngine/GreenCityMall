@@ -1,0 +1,35 @@
+<!--pages/publicize/publicize.wxml-->
+<view class="dis-flex_flex-row_just-cen pad_box" style="padding: 10rpx 70rpx;">
+    <view class="dis-flex_flex-col_just-fsta" 
+    style="width: 500rpx;height: 75rpx;border-bottom:{{select_text=='旅游攻略'?'5px solid #41924B':''}};font-size:{{select_text=='旅游攻略'?'40rpx':''}};" data-name="旅游攻略" bindtap="select_text_btn">
+        <text class="" style="margin-bottom: 20rpx; font-weight: 600;">旅游攻略</text>
+    </view>
+    <view class="dis-flex_flex-col_just-fsta" 
+    style="width: 500rpx;height: 75rpx;border-bottom:{{select_text=='特色记录'?'5px solid #41924B':''}};font-size:{{select_text=='特色记录'?'40rpx':''}};" data-name="特色记录" bindtap="select_text_btn">
+        <text class="" style="margin-bottom: 20rpx; font-weight: 600;">特色记录</text>
+    </view>
+</view>
+
+<view class="dis-flex_flex-col_just-cen" wx:if="{{select_text=='旅游攻略'}}">  
+    <view class="area_img_box">
+        <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/area/fuzhou_1.png" mode="aspectFit" class="area_img_left"
+        data-area="fuzhou" bindtap="click_area"></image>
+    </view>
+  <view class="area_img_box" >
+    <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/area/deihua_1.png" mode="aspectFit" class="area_img_left"
+    data-area="deihua" bindtap="click_area"></image>
+  </view>
+  <view class="area_img_box" >
+    <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/area/zhangzhou_1.png" mode="aspectFit" class="area_img_left"
+    data-area="zhangzhou"  bindtap="click_area"></image>
+  </view>
+</view>
+<!-- ----------------------------------- -->
+<view class="dis-flex_flex-col_just-cen" wx:if="{{select_text=='特色记录'}}">
+  <view class="area_img_box">
+    <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/area/tolou.png" mode="aspectFit" class="area_img" data-area="Rd_tulou"  bindtap="click_area"></image>
+  </view>
+  <view class="area_img_box">
+    <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/area/xiamen.png" mode="aspectFit" class="area_img" data-area="Rd_xiamen"  bindtap="click_area"></image>
+  </view>
+</view>

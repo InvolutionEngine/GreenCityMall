@@ -1,0 +1,40 @@
+/* pages/admin_UploadGoods/admin_UploadGoods.wxss */
+.upload_case{
+  box-shadow: 5rpx 5rpx 10rpx #c0c0c0;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.text{
+  font-size: 30rpx;
+}
+
+/* 弹窗 */
+.spe_case{
+  width:30%;
+  background-color: #07c160;
+  color: #ffffff;
+  border-radius: 10rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  
+}
+.swiper_img_case{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  width:210rpx;
+  height:210rpx;
+  /* 325 */
+}
+.details_img_case{
+  /* margin-left: 20rpx;
+  margin-top: 20rpx;
+  width:210rpx;
+  height:420rpx; */
+  width: 100;
+  margin-left: 30rpx;
+}
+.vancell_case .van-cell{
+  width:667rpx;
+}

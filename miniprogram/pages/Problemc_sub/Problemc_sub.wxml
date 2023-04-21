@@ -1,0 +1,69 @@
+<view class="dis-flex_flex-col_just-fsta pad_box">
+  <!-- <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="font-size: 40rpx;" >投诉基本信息</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品名称：</text>
+      <input class="text" type="text" placeholder="请输入商品名称" data-message="name" bindinput="input_goodsMessage"/>    
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 25rpx;margin-bottom: 20rpx;">
+      <text class="text" >商品原价：</text>
+      <input class="text" type="text" placeholder="请输入商品原价" data-message="pro_price" bindinput="input_goodsMessage"/>    
+    </view>
+  </view> -->
+  <view class=" pad_box address_case" style="margin-left: 20rpx; margin-right: 20rpx; width: 100%; margin-bottom: 30rpx;">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="color:#888888; margin-bottom:10rpx;">问题描述</text>
+    </view>
+    <van-cell-group  style="height: 200rpx;">
+      <van-field
+        value="{{ message }}"
+        label="问题"
+        type="textarea"
+        placeholder="向程序员们留下您的问题哦！"
+        autosize
+        bindinput="inputRemarks"
+        name="" id="" rows=""
+      />
+    </van-cell-group>
+  </view>
+  <!-- 问题分类 -->
+  <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-sapbet">
+      <text style="font-size: 40rpx;" >问题分类</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;margin-bottom: 10rpx;">
+      <van-radio-group value="{{ radio }}" direction="horizontal"  bind:change="onChange" >
+        <van-radio name="1">功能建议</van-radio>
+        <van-radio name="2">产品服务</van-radio>
+        <van-radio name="3" style="margin-bottom: 15rpx;">客服专线</van-radio>
+        <van-radio name="4">物流运输</van-radio>
+        <van-radio name="5">技术支持</van-radio>
+        <van-radio name="6">其他</van-radio>
+      </van-radio-group>  
+    </view>
+  </view>
+  
+  <!-- 问题详情图 -->
+  <view class="dis-flex_flex-col_just-cen pad_box upload_case">
+    <view class="dis-flex_flex-row_just-sapbet">
+      <text style="font-size: 40rpx;" >问题详情图</text>
+      <van-button icon = "plus" class="btn_van" type="primary" bind:click="add_swiper" ></van-button>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="flex-wrap: wrap;">
+      <block wx:for="{{url}}" wx:key="index">   
+          <image src="{{item}}" class="swiper_img_case" data-index="{{index}}" bindlongpress="delete_swiper_img"></image>
+      </block>
+    </view>
+  </view>
+   <!-- 商品详情页 -->
+  <!-- 提交 -->
+  <view class="dis-flex_flex-col_just-cen" style="height: 300rpx;">
+    <button style="background-color:#07c160; color: #fff;  width: 600rpx;"bindtap="sub_problem">提交</button>
+  </view>
+</view>
+

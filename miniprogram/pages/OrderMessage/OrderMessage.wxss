@@ -1,0 +1,32 @@
+.banner{
+  height: 6vh;
+  background-color: #ffffff;
+  font-size: 25rpx;
+}
+
+.order{
+  /* background-color: #fafafa; */
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  font-size: 25rpx;
+}
+.selected{
+  font-size: 30rpx;
+  height: 100%;
+  border-bottom: 4rpx solid #ff502f;
+}
+
+
+
+.card{
+  width: 100%;
+}
+
+.van-card-full .van-card{
+  background-color: #ffffff;
+}
+
+/* .custom-class .van-icon{
+  size:30rpx
+} */

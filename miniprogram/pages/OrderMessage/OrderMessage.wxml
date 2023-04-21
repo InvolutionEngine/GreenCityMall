@@ -1,0 +1,149 @@
+<van-search value="{{ value }}" placeholder="福州茉莉花茶、龙岩花生、安溪铁观音" shape="round"   bind:search="search" background="#41924B"  />
+
+<!-- <view class="dis-flex_flex-row_just-sapbet   banner">
+  <view class="dis-flex_flex-row_just-cen {{choose_Tab=='已付款'?'selected':''}}" data-name="已付款" bindtap="select_Tab">
+    <text>已付款</text>
+  </view>
+  <view class="dis-flex_flex-row_just-cen {{choose_Tab=='运输中'?'selected':''}}" data-name="运输中" bindtap="select_Tab">
+    <text>运输中</text>
+  </view>
+  <view class="dis-flex_flex-row_just-cen {{choose_Tab=='已结单'?'selected':''}}" data-name="已结单" bindtap="select_Tab">
+    <text>已结单</text>
+  </view>
+</view> -->
+<!-- active="a" -->
+<van-tabs animated active="{{ active }}" bind:change="onChange">
+    <!-- 已付款 -->
+      <van-tab title="已付款">
+        <view class="dis-flex_flex-col_just-fsta pad_box " >
+          <block wx:for="{{order}}" wx:key="index" wx:if="{{item.type=='已付款'}}">
+            <view class="dis-flex_flex-col_just-cen pad_box order">
+              <view  class="dis-flex_flex-row_just-fsta">
+                <text  style="color: #888888;">订单编号:</text><text  style="color: #888888;">{{item._id}}</text>
+                <text  style="color: #0ab555; margin-left: 35rpx;">{{item.type}}</text>     
+              </view>
+              <van-divider style="width:100%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+                <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="index">
+                  <!-- <text style="color: #888888;">订单编号：{{item._id}}</text>
+                  <text style="color: #888888;">订单状态：{{item.type}}</text>
+                  <text style="color: #888888;">订单地址：{{item.type}}</text> -->
+                    <van-card class="card van-card-full" 
+                      num="{{ goods.products_num }}"
+                      price="{{ goods.products_price }}"
+                      desc="{{ goods.products_spe }}"
+                      title="{{ goods.products_name }}"
+                      thumb="{{ goods.products_img }}"
+                    />      
+                    <view slot="footer" class="dis-flex_flex-row_just-end " >
+                      <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">用户备注：{{item.remarks}}</text>
+                      <view style=" width:20%">
+                        <van-button type="danger" size="small" style="margin-right: 20rpx;" data-id="{{item._id}}" bind:click="delete_order">取消订单</van-button>
+                      </view>             
+                    </view>
+                  </block>
+                  <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">订单时间：{{item.time}}</text>
+            </view>
+            <van-divider style="width:100%;" 
+            customStyle=" border-color: #41924B; font-size: 18px;margin-top:10rpx; margin-bottom:10rpx" >
+            </van-divider>
+          </block>
+        </view>
+        <!-- // -->
+      </van-tab>
+    <!-- 已发货 -->
+      <van-tab title="已发货">
+        <view class="dis-flex_flex-col_just-fsta pad_box " >
+          <block wx:for="{{order}}" wx:key="index" wx:if="{{item.type=='已发货'}}">
+            <view class="dis-flex_flex-col_just-cen pad_box order">
+              <view  class="dis-flex_flex-row_just-fsta">
+                <text  style="color: #888888;">订单编号:</text><text  style="color: #888888;">{{item._id}}</text>
+                <text  style="color: #0ab555; margin-left: 35rpx;">{{item.type}}</text>     
+              </view>
+              <van-divider style="width:100%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+                <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="index">
+                  <!-- <text style="color: #888888;">订单编号：{{item._id}}</text>
+                  <text style="color: #888888;">订单状态：{{item.type}}</text>
+                  <text style="color: #888888;">订单地址：{{item.type}}</text> -->
+                    <van-card class="card van-card-full" 
+                      num="{{ goods.products_num }}"
+                      price="{{ goods.products_price }}"
+                      desc="{{ goods.products_spe }}"
+                      title="{{ goods.products_name }}"
+                      thumb="{{ goods.products_img }}"
+                    />      
+                    <view slot="footer" class="dis-flex_flex-row_just-end " >
+                      <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">用户备注：{{item.remarks}}</text>
+                      <view style=" width:20%">
+                        <van-button type="primary" size="small" style="margin-right: 40rpx;" bind:click="Logistics_open">查看物流</van-button>
+                      </view>
+                      <view style=" width:20%;margin-left: 20rpx;">
+                        <van-button type="primary" size="small" style="margin-right: 40rpx;"data-id="{{item._id}}" bind:click="receipt_goods">确认收货</van-button>
+                      </view>           
+                    </view>
+                  </block>
+                  <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">订单时间：{{item.time}}</text>
+            </view>
+            <van-divider style="width:100%;" 
+            customStyle=" border-color: #41924B; font-size: 18px;margin-top:10rpx; margin-bottom:10rpx" >
+            </van-divider>
+          </block>
+        </view>
+      </van-tab>
+    <!-- 已结单 -->
+      <van-tab title="已结单">
+        <view class="dis-flex_flex-col_just-fsta pad_box " >
+          <block wx:for="{{order}}" wx:key="index" wx:if="{{item.type=='已结单'}}">
+            <view class="dis-flex_flex-col_just-cen pad_box order">
+              <view  class="dis-flex_flex-row_just-fsta">
+                <text  style="color: #888888;">订单编号:</text><text  style="color: #888888;">{{item._id}}</text>
+                <text  style="color: #0ab555; margin-left: 50rpx;">{{item.type}}</text>     
+              </view>
+              <van-divider style="width:100%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+                <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="index">
+                  <!-- <text style="color: #888888;">订单编号：{{item._id}}</text>
+                  <text style="color: #888888;">订单状态：{{item.type}}</text>
+                  <text style="color: #888888;">订单地址：{{item.type}}</text> -->
+                    <van-card class="card van-card-full" 
+                      num="{{ goods.products_num }}"
+                      price="{{ goods.products_price }}"
+                      desc="{{ goods.products_spe }}"
+                      title="{{ goods.products_name }}"
+                      thumb="{{ goods.products_img }}"
+                    />      
+                    <view slot="footer" class="dis-flex_flex-row_just-end " >
+                      <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">用户备注：{{item.remarks}}</text>
+                        <view style=" width:20%">
+                        <van-button type="primary" size="small" style="margin-right: 40rpx;" bind:click="goto_evaluate" data-id="{{goods.products_id}}">评价</van-button>
+                        </view>
+                        <view style=" width:20%;margin-left: 20rpx;">
+                        <van-button type="danger" size="small" style="margin-right: 20rpx;" bind:click="state_after_sales" data-id="{{item._id}}" >产品售后</van-button>
+                        </view>
+                    </view>
+                  </block>
+                  <text class="dis-flex_flex-row_just-fsta" style="color: #888888;">订单时间：{{item.time}}</text>
+                  <text wx:if="{{item.cancel_order_time}}" class="dis-flex_flex-row_just-fsta" style="color: red;">取消订单时间：{{item.cancel_order_time}}</text>
+                  <text wx:if="{{item.receipt_order_time}}" class="dis-flex_flex-row_just-fsta" style="color: #0ab555;">订单完结时间：{{item.receipt_order_time}}</text>
+            </view>
+            <van-divider style="width:100%;" 
+            customStyle=" border-color: #41924B; font-size: 18px;margin-top:10rpx; margin-bottom:10rpx" >
+            </van-divider>
+          </block>
+        </view>
+      </van-tab>
+    </van-tabs>
+    
+    <!-- 物流弹窗 -->
+    <van-popup show="{{ Logistics }}" round position="bottom" closeable custom-style="height:80%;" bind:close="Logistics_close">
+      <view class="dis-flex_flex-row_just-cen" style="height:80rpx;"> 
+        <text>物流信息</text>
+      </view>
+      <van-divider style="width:100%;" />
+      <view style="margin-left: 10rpx;" >
+        <van-steps class="custom-class"
+          steps="{{ steps }}"
+          active="{{ Logistics_active }}"
+          direction="vertical"
+          active-color="#ee0a24"
+        />
+      </view>
+    </van-popup>

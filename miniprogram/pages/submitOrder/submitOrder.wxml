@@ -1,0 +1,73 @@
+<!--pages/submitOrder/submitOrder.wxml-->
+<view class="dis-flex_flex-col_just-fsta pad_box" >
+  <view class="dis-flex_flex-col_just-cen pad_box address_case " bindtap="get_address">
+    <!-- <view class="dis-flex_flex-row_just-fsta"> 
+      <text style="color:#888888; margin-bottom: 10rpx;">基本信息填写</text>
+    </view>
+    <van-divider></van-divider> -->
+  <!-- 没有选择 -->
+    <van-icon name="plus" color="#888888" size="50rpx" wx:if="{{!address.errMsg}}"  />
+    <text style="color: #888888; margin-top:20rpx;" wx:if="{{!address.errMsg}}"  >请选择您的收货地址</text>
+  <!-- 有选 -->
+    <view class="dis-flex_flex-row_just-fsta" style="font-size: 30rpx; margin-top: 20rpx;" 
+    wx:if="{{address.errMsg == 'chooseAddress:ok'}}">
+      <text style="color:black;font-size: 30rpx; margin-left: 10rpx;">地址：{{address.provinceName}}{{address.cityName}}
+      {{address.countName}}{{address.detailInfoName}}
+      </text>
+    </view>
+    <view class="dis-flex_flex-row_just-sapbet" style="font-size: 25rpx;" wx:if="{{address.errMsg == 'chooseAddress:ok'}}">
+      <text style="margin-left: 10rpx;">联系人：{{address.userName}}</text>
+      <text >联系电话：{{address.telNumber}}</text>
+    </view>
+  </view>
+</view>
+
+<view  class= "pad_box address_case" style="margin-left: 20rpx; margin-right: 20rpx;">
+  <text style="color:#888888; margin-bottom:10rpx;">订单商品信息</text>
+  <van-divider></van-divider>
+  <block wx:for="{{goods}}" wx:key="index">
+    <van-card
+      num="{{item.products_num}}"
+      price="{{item.products_price}}"
+      desc="{{item.products_spe}}"
+      title="{{item.products_name}}"
+      thumb="{{item.products_img}}"
+
+      tag="{{item.products_discount}}"
+      origin-price="{{item.products_pro_price}}"
+      thumb-link="{{}}"
+    />
+  </block>
+</view>
+
+  <view class=" pad_box address_case" style="margin-left: 20rpx; margin-right: 20rpx;">
+    <view class="dis-flex_flex-row_just-fsta">
+      <text style="color:#888888; margin-bottom:10rpx;">订单备注</text>
+    </view>
+    
+    <!-- <textarea name="" id="" cols="30" rows="" style="width: 100%; height: 70rpx;" bindinput="inputRemarks"></textarea> -->
+    <van-cell-group>
+      <van-field
+        value="{{ message }}"
+        label="备注信息"
+        type="textarea"
+        placeholder="向商家留下您的需求哦！"
+        autosize
+        bindinput="inputRemarks"
+        name="" id="" rows=""
+      />
+    </van-cell-group>
+  </view>
+
+  <view style="width:100%;height: 200rpx;"></view>
+
+<view  style="margin-left: 20rpx; margin-right: 20rpx;">
+    <van-submit-bar
+    price="{{ total_money }}"
+    button-text="支付订单"
+    bind:submit="payOrder"
+    tip="{{ true }}"
+    >
+    </van-submit-bar>
+</view>
+

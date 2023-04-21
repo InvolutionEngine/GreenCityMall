@@ -1,0 +1,9 @@
+<!--pages/user_enroll/user_enroll.wxml-->
+<!-- closeable 模式，在右侧显示关闭按钮 -->
+<van-notice-bar mode="closeable" text="请选择您的类型" />
+<image src="../../images/service_img/SH.png" class="img_on" bindtap="shanghu"></image>
+<text class="text" style="margin-top: 50rpx;">我是商户</text>
+<image src="../../images/service_img/PTYH.png" class="img_down" bindtap="youke"></image>
+<text class="text">我是普通用户</text>
+
+

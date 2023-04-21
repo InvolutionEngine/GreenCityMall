@@ -1,0 +1,12 @@
+/* pages/publicize/publicize.wxss */
+.area_img_box{
+  margin-top: 30rpx;
+}
+.area_img_left{
+    width: 560rpx;
+    height: 1000rpx;
+  }
+.area_img{
+  width: 560rpx;
+  height: 260rpx;
+}

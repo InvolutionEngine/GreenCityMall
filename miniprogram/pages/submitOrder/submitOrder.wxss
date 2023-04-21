@@ -1,0 +1,12 @@
+.address_case{
+  background-color: #fff;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx #888888;
+  font-size: 25rpx;
+}
+.goods_img{
+  width: 70rpx;
+  height: 70rpx;
+
+}

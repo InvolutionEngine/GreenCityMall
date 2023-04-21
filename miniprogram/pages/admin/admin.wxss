@@ -1,0 +1,20 @@
+.ab_case{
+  background-color: #fff;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rox #fff;
+}
+.ab_row{
+  height: 250rpx;
+  
+}
+.ab_item{
+  width: 33%;
+  font-size: 25rpx;
+  color: #888888;
+}
+.ab_img{
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 10rpx;
+}

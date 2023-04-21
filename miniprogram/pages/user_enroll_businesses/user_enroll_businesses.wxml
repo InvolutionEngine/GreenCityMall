@@ -1,0 +1,39 @@
+<!--pages/user_enroll_businesses/user_enroll_businesses.wxml-->
+<van-notice-bar mode="closeable" text="商户类型修改需要重新选择请返回上一步" />
+<view class="case" style="width: 96%;margin:auto;margin-top: 20rpx;">
+  <van-cell-group>
+  <van-field
+    value="{{ new_nickName }}"
+    type="string"
+    label="用户名"
+    placeholder="{{user.user_message.nickName}}"
+    border="{{ false }}"
+    left-icon="contact"
+    bind:blur="get_nickName"
+  />
+  <van-field
+    value="商户"
+    label="用户类型"
+    disabled
+    border="{{ false }}"
+    left-icon="shop-o"
+  />
+  <van-field
+    value="{{ personal_message }}"
+    label="个性签名"
+    type="textarea"
+    placeholder="请输入签名"
+    autosize
+    border="{{ false }}"
+    left-icon="edit"
+    bind:blur="get_personal_message"
+  />
+</van-cell-group>
+</view>
+
+<view class="dis-flex_flex-col_just-cen" style="height: 300rpx;">
+    <button style="background-color:#07c160; color: #fff;  width: 600rpx;"bindtap="user_message_upload">
+    更新</button>
+</view>
+
+

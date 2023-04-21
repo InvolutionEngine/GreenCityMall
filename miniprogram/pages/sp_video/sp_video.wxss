@@ -1,0 +1,17 @@
+/* pages/sp_video/sp_video.wxss */
+
+.subject_bg{
+    background-color: #2de3a1;
+    border-radius: 50%;
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+  }
+  .subject_text{
+    font-weight: 800 ;
+    font-size: 35rpx;
+  }
+.jieshao{
+  height: 100%;
+}

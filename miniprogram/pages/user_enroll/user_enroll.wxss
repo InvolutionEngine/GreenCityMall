@@ -1,0 +1,22 @@
+/* pages/user_enroll/user_enroll.wxss */
+page{
+  background-color: #e6e6e6;
+}
+.img_on{
+  width: 315rpx;
+  height: 315rpx;
+  padding-top: 15%;
+  align-self: center;
+}
+
+.img_down{
+  width: 350rpx;
+  height: 350rpx;
+  padding-left: 20rpx;
+  padding-top: 10%;
+  align-self: center;
+}
+
+.text{
+  align-self: center;
+}

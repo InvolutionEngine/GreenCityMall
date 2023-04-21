@@ -1,0 +1,41 @@
+<view class="dis-flex_flex-col_just-fsta pad_box" wx:if="{{goods_list.length}}">
+    <van-checkbox-group value="{{ result }}" bind:change="add_to_totalMoney" style="width:100%">
+      <block wx:for="{{goods_list}}" wx:key="index">
+       <view class="dis-flex_flex-row_just-sapbet">
+            <van-checkbox name="{{index}}"    >
+            </van-checkbox>
+            <view class="dis-flex_flex-row_just-sapbet pad_box goods_case "  
+            style="margin-bottom: 20rpx; margin-left: 10rpx;" data-id="{{item._id}}" bindlongpress="delete_cargoods"> 
+                <view class="dis-flex_flex-row_just-fsta" style="width:60%">
+                    <image src="{{item.products_img}}" class="goods_img"></image>
+                    <view class="dis-flex_flex-col_just-sapbet " style="width: 60%; ">
+                      <text class="goods_text dis-flex_flex-row_just-fsta" style="font-size: 12px; padding-left: 40rpx;font-weight:bold;">{{item.products_name}}</text>
+                      <text  class="goods_text" style="padding-left: 30rpx; font-size: 12px; color: gray;">{{item.products_spe}}</text>
+                      <text class="price" >￥{{item.products_price}}</text>
+                    </view>
+                </view>
+                <van-stepper  value="{{ item.products_num }}" data-index="{{index}}"  bind:change="save_selectedNum" />
+            </view>
+         </view>
+      </block>
+    </van-checkbox-group>
+</view>
+
+<van-empty  wx:else
+  style="margin-top: 160rpx;"
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+  description="购物车空啦！"
+/>
+
+<van-submit-bar
+  price="{{total_money}}"
+  button-text="提交订单"
+  bind:submit="submit_order"
+  tip="{{ true }}"
+  safe-area-inset-bottom=""
+>
+  <van-tag  wx:if="{{!if_totalChoose}}" data-name="all_true"   type="success"  plain  size="large" bindtap="selected_all" style="padding-left: 20rpx;">我全都要</van-tag>
+  <van-tag wx:else data-name="all_false" type="success" size="large" bindtap="selected_all" style="padding-left: 20rpx;">我全都要</van-tag>
+  
+  <view slot="tip">按需购入避免浪费呦, <text>谢谢您的支持</text></view>
+</van-submit-bar>

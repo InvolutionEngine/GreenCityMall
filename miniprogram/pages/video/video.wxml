@@ -1,0 +1,38 @@
+<van-notice-bar mode="closeable"  text="为避免版权问题，仅展示部分片段，望谅解!感想您的支持！" />
+<!-- video -->
+<view class="dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;">
+  <view class="subject_bg"></view>
+  <text class="subject_text">宣传视频</text>
+</view>
+<swiper class="swiper_video" indicator-active-color="#2de3a1" indicator-color="white" indicator-dots='true' autoplay='true' interval='33000' duration='1000' circular='true'>
+  <swiper-item>
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/video/1.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+  </swiper-item>
+  <swiper-item>
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/video/2.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain" play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+  </swiper-item>
+  <swiper-item>
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/video/3.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain" play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+  </swiper-item>
+</swiper>
+
+
+<!-- 连接跳转 -->
+<!-- <view class="dis-flex_flex-row_just-fsta" style="margin-top: 30rpx;">
+  <view class="subject_bg"></view>
+  <text class="subject_text">跳转连接</text>
+</view>
+<view class="service_banner dis-flex_flex-row_just-fsta pad_box">
+  <navigator class=" dis_flex-direction_column-aligin_center-justify-start service_banner" url="../../pages/haina/haina">
+    <image class="service_banner_image" src="../../images/video_img/1.png"></image>
+    <text class="service_banner_text">植物学</text>
+  </navigator>
+  <navigator class=" dis_flex-direction_column-aligin_center-justify-start service_banner" url="../../pages/wansheng/wansheng">
+    <image class="service_banner_image" src="../../images/video_img/2.png"></image>
+    <text class="service_banner_text">生理学</text>
+  </navigator>
+</view> -->
+

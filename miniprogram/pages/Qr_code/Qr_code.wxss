@@ -1,0 +1,19 @@
+/* pages/Qr_code/Qr_code.wxss */
+.select_case{
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx #e9e9e9;
+  margin-top: 20rpx;
+}
+.text-warp{
+  word-break:keep-all;       /* 不换行 */
+  white-space:nowrap;        /* 不换行 */
+}
+.img_up{
+  width: 600rpx;
+  height: 700rpx;
+}
+.img_down{
+  width: 600rpx;
+  height: 600rpx;
+}

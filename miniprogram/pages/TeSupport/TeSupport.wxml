@@ -1,0 +1,77 @@
+<van-notice-bar mode="closeable"  text="尊敬的用户请注意！诺以下问题未能解决 请点击下方按钮咨询客服哦！" />
+
+<!-- 折叠面板 -->
+<view class="pad_box case " style="width: 90%;margin-left: 40rpx;">
+  <van-collapse size="large" accordion  value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item size="large" title="使用须知" name="1">
+      下方的折叠面板收集了基本的使用问题报告 可以根据自己的问题进行查询哦！
+      如果还未能解决您的困扰 可以前往智能客服解决您的问题哦！
+    </van-collapse-item>
+    <van-collapse-item title="找不到商户上传产品的位置？" name="2">
+      在“我的”页面中的基础功能中的商品管理功能，您成功登录后就能看到啦！
+    </van-collapse-item>
+    <van-collapse-item title="智能客服解决不了我的问题怎么办？" name="3">
+      在“我的”页面中的技术支持页面就能看到 紧急问题热线啦！ 拨通后能快速的解决您的问题！
+    </van-collapse-item>
+    <van-collapse-item title="忘记绑定的商户号怎么办？" name="4">
+      可以联系在线客服就可以实现更改 在线客服的出没时间是 AM 9：00- PM 5：00
+    </van-collapse-item>
+    <van-collapse-item title="绿沁之城后台上传产品限制数量吗？" name="5">
+      目前的绿沁之城云端数据库还在更新构建，所以目前并不限制，不过当产品数大于500件时，我们会以短信或移动电话的形式通知您的！
+    </van-collapse-item>
+    <van-collapse-item title="绿沁之城设置产品关键词有哪些禁忌？" name="6">
+      1）关键词必须为小程序提供的服务，或小程序提供服务的品牌；
+      2）禁止使用其他品牌名称；
+      3）禁止使用未经授权的名人名称；
+      4）禁止涉及色情、暴力、政治敏感；
+      5）禁止使用单字符；
+      6）禁止在关键词中使用特殊符号；
+    </van-collapse-item>
+    <van-collapse-item title="可以调用第三方的视频吗？" name="7">
+      腾讯目前未开放此功能，所以目前的小程序是暂不支持调用第三方的视频哦！
+    </van-collapse-item>
+    <van-collapse-item title="更新了绿沁之城里面的产品和个人信息数据，需要重新提交审核吗？" name="8">
+      不需要，小沁会帮您自动同步信息的哟！
+    </van-collapse-item>
+    <van-collapse-item title="个人的头像和介绍可以修改吗？" name="9">
+      可以，每月只能修改5次哟！
+    </van-collapse-item>
+    <van-collapse-item title="我很久没有上线绿沁之城，官方会删除我的数据吗？我以后还能打开吗？" name="10">
+     每一个用户都是小沁的好朋友！希望您不会离开太久嗷！我们永远会为您留下一片树阴！
+    </van-collapse-item>
+    <van-collapse-item title="我刚刚接触绿沁之城小程序，不是很会使用这个软件，有使用说明吗？" name="11">
+      可以在观看我们的演示视频哟！
+      链接：https://www.bilibili.com/video/BV1cN4y1g7Mw?t=6.5
+    </van-collapse-item>
+    <van-collapse-item title="技术支持里没有我遇到的问题？" name="12">
+      您可以在“我的”页面中的问题投诉中告知您遇到的困难，我们程序员小哥看到后会立马解决您的问题！
+      如果您的情况比较紧急，可以在“我的”页面中的技术支持页面就能看到 紧急问题热线啦！ 拨通后能快速的解决您的问题！
+    </van-collapse-item>
+  </van-collapse>
+</view>
+
+<!-- 客服模块 -->
+
+<button open-type="contact"  style="width: 100%;margin-top: 30rpx; margin-bottom: 100rpx;">
+<view class="kf" style="border : 8rpx solid #07c160">
+  <image src="../../images/service_img/kefu_message.png"></image>
+  <view class="userName" >
+    <view>绿沁之城官方客服</view>
+    <view style="font-size: 24rpx; color: gray;margin-top: 10rpx;">请点击这里!技术问题和信息咨询我更专业哦！</view>    
+  </view>
+</view>
+</button>
+
+
+<!-- 侧面导航条 -->
+<!-- <view>
+    <image src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/index_big_img/竹笋index.png" class="img"></image>
+</view>
+<view class="side">
+  <view class="go" bindtap="goTop">
+    <image src="../../images/user/Feedback.png"></image>
+  </view>
+  <navigator url="../admin_ManageGoods/admin_ManageGoods">
+    <view class="add">+</view>
+  </navigator>
+</view> -->

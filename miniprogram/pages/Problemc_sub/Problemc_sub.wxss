@@ -1,0 +1,33 @@
+.upload_case{
+  box-shadow: 5rpx 5rpx 10rpx #c0c0c0;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.text{
+  font-size: 30rpx;
+}
+.swiper_img_case{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  width:210rpx;
+  height:210rpx;
+  /* 325 */
+}
+.details_img_case{
+  /* margin-left: 20rpx;
+  margin-top: 20rpx;
+  width:210rpx;
+  height:420rpx; */
+  width: 100;
+  margin-left: 30rpx;
+}
+.vancell_case .van-cell{
+  width:667rpx;
+}
+
+.address_case{
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx #c0c0c0;
+  font-size: 25rpx;
+}

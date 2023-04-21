@@ -1,0 +1,96 @@
+<!--pages/sp_video/sp_video.wxml-->
+<view class="dis-flex_flex-row_just-fsta" style="margin-top: 20rpx;">
+  <view class="subject_bg"></view>
+  <text class="subject_text">旅游攻略</text>
+</view>
+
+<view class=" dis-flex_flex-col_just-cen" style="margin-top:30rpx;" wx:if="{{area=='zhangzhou'}}">
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/sp_video/zhangzhou.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+</view>
+<view class=" dis-flex_flex-col_just-cen" style="margin-top:30rpx;" wx:if="{{area=='fuzhou'}}">
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/sp_video/fyzhou.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+</view>
+<view class=" dis-flex_flex-col_just-cen" style="margin-top:30rpx;" wx:if="{{area=='deihua'}}">
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/sp_video/deihua.mp4	" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+</view>
+<view class=" dis-flex_flex-col_just-cen" style="margin-top:30rpx;" wx:if="{{area=='Rd_tulou'}}">
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/sp_video/tulou.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+</view>
+<view class=" dis-flex_flex-col_just-cen" style="margin-top:30rpx;" wx:if="{{area=='Rd_xiamen'}}">
+    <video src="cloud://cloud1-1gch1ssc60b270dd.636c-cloud1-1gch1ssc60b270dd-1311883203/sp_video/xiamen.mp4" loop="false" controls="true" autoplay="false" muted="true" object-fit="contain"   play-btn-position="center" show-bottom-progress="false"  	show-mute-btn="true" class="service_video">
+    </video>
+</view>
+<!-- ------------------------------------------------------- -->
+<view class="dis-flex_flex-row_just-fsta" style="margin-top: 30rpx;">
+  <view class="subject_bg"></view>
+  <text class="subject_text">文字介绍</text>
+</view>
+
+<view class="pad_box" style="margin-left: 60rpx;" wx:if="{{area=='zhangzhou'}}">
+  <textarea class="jieshao">漳州市位于福建省南部沿海，虽然靠近厦门但也常常被厦门的光芒所掩盖，作为闽南文化的发祥地之一，这片土地除了人杰还拥有众多山川自然景观和人文建筑景点。香火鼎盛的三平寺、有风动石、造型奇异、风格独特的土楼、云洞岩、电影《云水谣》的拍摄地——云水谣古镇……在欣赏了厦门的海岛风情后不妨来附近的漳州寻找闽南文化的记忆。如果你想去漳州旅游，不妨可以到下面介绍的这些写地方看看。</textarea>
+  <text >1、田螺坑土楼群</text>
+  <text >2、云水谣景区</text>
+  <text >3、东山岛风景区</text>
+  <text >4、南门湾</text>
+  <text >5、镇海角</text>
+  
+</view>
+
+<view class="pad_box" style="margin-left: 60rpx;" wx:if="{{area=='fuzhou'}}">
+  <textarea class="jieshao">福州是一座有着2200多年历史的文化名城，历来文化昌盛，人文荟萃。是中国优秀旅游城市，山清水秀、风光绮丽，名山、名寺、名园、名居繁多，独具滨江滨海和山水园林旅游城市风貌。目前，福州拥有平潭海坛、鼓山、青云山、十八重溪等国家重点风景名胜区。尤其是鼓山，人说“到了福州没上鼓山等于没来福州”。可见其景色独特秀美之处。</textarea>
+  <text >1、南后街</text>
+  <text >2、福州西湖公园</text>
+  <text >3、钟鼓楼</text>
+  <text >4、金山寺</text>
+  <text >5、平潭</text>
+</view>
+
+<view class="pad_box" style="margin-left: 60rpx;" wx:if="{{area=='deihua'}}">
+  <textarea class="jieshao">德化是我国陶瓷文化发祥地和三大古瓷都之一，陶瓷产品80%以上外销，销往190多个国家和地区，是福建省十大重点出口县（市）之一、全国最大的工艺陶瓷生产和出口基地。先后荣膺“世界陶瓷之都”、“中国陶瓷之乡”、“中国电子商务百佳县”、“中国最佳生态旅游县”、“中国小水电之乡”、“中国瓷都·德化”、“中国民间文化艺术之乡”、“中国早熟梨之乡”、“中国油茶之乡”、“中国竹子之乡”等称号。 [5]  2020中国夏季休闲百佳县市。</textarea>
+</view>
+
+<view class="pad_box" style="margin-left: 60rpx;" wx:if="{{area=='Rd_tulou'}}">
+  <textarea class="jieshao">土楼，指主要分布在福建西南部一种适宜大家族居住的、具有很强的防御性能， [21]  以土、木、石、竹为主要建筑材料，利用未经焙烧的土并按一定比例的沙质黏土和黏质沙土拌合而成，用夹墙板夯筑而成的两层以上的房屋。 [17]  根据《现代汉语词典》的解释，所谓“楼”，就是“两层或两层以上的房子”。据此，一层的房子，即使以生土墙承重、以木料作为柱梁等构架，也不能称为土楼，只能称为土屋。 [1]  土楼是世界独一无二的大型民居形式，被称为中国传统民居的瑰宝。
+土楼以生土为主要建筑材料、生土与木结构相结合，并不同程度地使用石材的大型民居建筑。其中分布最广、数量最多、品类最丰富、保存最完好的，是福建土楼。 [1]  土楼已被严格确认的福建土楼建筑有3000余座，主要分布在福建省龙岩永定县、福建省漳州南靖县和华安县。</textarea>
+</view>
+
+<view class="pad_box" style="margin-left: 60rpx;" wx:if="{{area=='Rd_xiamen'}}">
+  <textarea class="jieshao">厦门大学
+
+厦门大学值得去看一看，因为又美又浪漫。厦门大学对游客有限度开放，需携带二代身份证，不需要门票。通常所说的厦大是厦大思明校区。周一至周五开放时间是每天12:00-14:00以及17:00以后，其余时间不接待游客，而且12:00-14:00接待人数也有限制。周末、节假日和寒暑假正常对外开放。值得一提的是，厦大有个情人谷，但是我没有去成，遗憾两秒。
+
+南普陀寺
+
+就在厦大后面，同样是免费的，连身份证都不需要，是南方挺有名的寺庙，出过很多高僧，可以随心进香。爬到最高峰景色很不错，里面有个藏经阁我很感兴趣，但是不对游客开放，里面还有素食馆，感兴趣可以尝试。
+
+厦门园林植物园
+
+这个景点是最最遗憾的，一开始感觉植物园没什么好看的，但是进去了才发现里面别有洞天。主要是因为有很多热带、亚热带植物，花美树茂，亭台雨榭，对于北方的娃来说很新鲜。但是因为我去的太晚了，都没来及好好看。门票40元，与厦大有一站公交车的距离，从厦大西村穿过钟鼓山隧道就到啦，植物园附近有个挺宏伟的烈士纪念陵园。
+
+白鹭洲公园
+
+挺大一片湖区，风景秀丽，真的有白鹭，适合拍照。时间充裕的话可以办自行车卡在周围兜兜风，附近是厦门市政府所在地。
+
+演武大桥
+
+离厦大非常近，免费对游客开放，适合晚上去看，是修进海里的立交桥。演武大桥建在古演武池、演武场遗址，西侧隔海面对郑成功塑像，因此用与郑成功有关的当地地名“演武”派生命名大桥。
+
+顶澳仔猫街
+
+就是厦门的一个小街区，道路两旁有猫咪的涂鸦和雕塑，铲屎官们请自行前往，同样在厦大附近，同样的免费。
+
+厦门海边
+
+街边的行道树有大王椰子树、棕榈树、苏铁和榕树等，跟北方的海不太一样，很浪漫。经常有小哥抱着吉他在海边演唱《把我的悲伤留给自己》、《那些花儿》之类。
+
+曾厝垵和中山路步行街
+
+这两个地方离厦大不是很远，是有名的小吃街和购物胜地，而且两个地方都在海边，吃完可以去海边消消食啦。中山路是老牌的商业街，有闽南特有的骑楼建筑，小吃很多，沙茶面、姜母鸭之类都还不错，吃货们一定要去哈。
+</textarea>
+</view>
+
+

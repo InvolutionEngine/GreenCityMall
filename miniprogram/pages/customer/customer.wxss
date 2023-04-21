@@ -1,0 +1,25 @@
+/* pages/customer/customer.wxss */
+.kf{
+  background-color: #fff;
+  border-radius: 30rpx;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+}
+.kf image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 25rpx;
+  padding: 10rpx;
+}
+.kf .userName{
+  margin-top: 20rpx;
+}
+
+.version{
+  width: 85%;
+  margin: 0 auto;
+  height: 300rpx;
+  background-color: #fff;
+}

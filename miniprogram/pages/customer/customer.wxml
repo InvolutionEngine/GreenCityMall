@@ -1,0 +1,12 @@
+<!--pages/customer/customer.wxml-->
+<van-notice-bar mode="closeable"  text="尊敬的用户请注意！官方客服不会以任何形式向您讨要银行卡号、密码等个人私密信息" />
+
+<button open-type="contact"  style="width: 100%;margin-top: 30rpx; margin-bottom: 100rpx;">
+<view class="kf" style="border : 8rpx solid #07c160">
+  <image src="../../images/service_img/kefu_message.png"></image>
+  <view class="userName" >
+    <view>绿沁之城官方客服</view>
+    <view style="font-size: 24rpx; color: gray;margin-top: 10rpx;">请点击这里!技术问题和信息咨询我更专业哦！</view>    
+  </view>
+</view>
+</button>

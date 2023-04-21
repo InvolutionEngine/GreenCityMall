@@ -1,0 +1,72 @@
+<!--pages/market/market.wxml-->
+
+<van-search value="{{ value }}" placeholder="福州茉莉花茶、龙岩花生、安溪铁观音" shape="round"   bind:change="search" background="#41924B" bind:focus="open_search_box" bind:blur="close_search_box"> 
+</van-search>
+
+<view class="dis-flex_flex-col_just-cen" wx:if="{{if_open_search_box}}" bind:focus="open_search_box"  >
+  <view class="dis-flex_flex-col_just-fsta case pad_box search_box">
+
+    <van-empty image="error" style="margin-top: -40rpx;" description="查点其他的商品吧"
+    wx:if="{{search_list.length==0}}" />
+
+    <scroll-view style="width:100%;height: 100%;" scroll-y="true" wx:else >
+      <view class="dis-flex_flex-col_just-fsta">
+        <block wx:for="{{search_list}}" wx:key="index"> 
+          <view class="dis-flex_flex-row_just-sapbet" bindtap="click" data-id="{{item._id}}" >
+            <image class="show_search_img "src="{{item.url[0]}}" ></image>
+            <text>{{item.name}}</text>
+            <text class="price">￥：{{item.price}}</text>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="dis-flex_flex-row_just-cen" style="height: 100vh;"> 
+  <!-- 左边 -->
+  <scroll-view style="width:30%; height: 100%;border-right: 2rpx solid #e9e9e9;" scroll-y="true">
+    <block wx:for="{{category}}" wx:key="index" >
+      <view class="dis-flex_flex-row_just-cen category {{select_category==item.name?'select_category':'category_def'}}" data-name="{{item.name}}" bindtap="select_category"style="font-size: 25rpx;" >
+        <text >{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 右边 -->
+  <scroll-view style="width: 70%; height: 100%;" scroll-y="true">
+    <block wx:for="{{goods}}" wx:key="index">
+      <navigator class="dis-flex_flex-row_just-sapbet pad_box" url="../productsDetail/productsDetail?id={{item._id}}"> 
+        <image src="{{item.url[0]}}" class="img"></image>
+        <view class="dis-flex_flex-col_just-sapbet" style="height: 130rpx;width:70%;">
+          <view class="dis-flex_flex-row_just-fsta">
+            <text style="margin-left:10rpx ;">{{item.name}}</text>
+          </view>
+          <view class="dis-flex_flex-row_just-fsta">
+            <van-tag class="pad" style="margin-left:10rpx ;"  type="success">{{item.discount[0]}}</van-tag> 
+          </view>
+          <view class="dis-flex_flex-row_just-sapbet">
+            <text style="font-size: 25rpx;margin-left: 10rpx; color: #888888;">月销{{item.sales}}</text>
+            <text style="font-size: 25rpx;" class="price">￥{{item.price}}</text>
+          </view>
+        </view>
+      </navigator>
+      <van-divider style="width:100%;"  > </van-divider>
+    </block>
+  </scroll-view>
+</view>
+
+
+
+
+
+<!-- <view style="margin-top: 40rpx; width: 90%;margin-left: 35rpx;" >
+  <van-button type="primary" size="large" bind:click="area_open">选择地区</van-button>
+</view>
+<van-popup show="{{ if_area }}" round position="bottom" closeable custom-style="height:70%;" bind:close="area_close">
+<view style="margin-top: 80rpx;">
+  <van-area title="请选择地区" area-list="{{ areaList }}" />
+</view>
+
+</van-popup> -->
+
+

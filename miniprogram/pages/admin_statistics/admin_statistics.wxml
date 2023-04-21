@@ -1,0 +1,15 @@
+<!--pages/admin_statistics/admin_statistics.wxml-->
+<van-cell-group inset style="margin-top: 20rpx;">
+  <!-- <van-cell title="已付款" value="内容" /> -->
+  <van-cell title="待发货" value="{{number.paid.total}}" label="已经付款，还未发货" />
+  <van-cell title="已结单" value="{{number.closed.total}}" label="完成交易" />
+  <van-cell title="正在售后" value="{{number.saleing.total}}" label="卖家发起的售后服务" />
+  <van-cell title="已售后" value="{{number.after_sales.total}}" label="完成售后" />
+  <van-cell title="本日订单数" value="{{number.day_Order_number.total}}" />
+  <van-cell title="本月订单数" value="{{number.month_Order_number.total}}"/>
+  <!-- <van-cell title="本月盈利金额" value="内容" label="描述信息" /> -->
+</van-cell-group>
+
+<view style="margin-top: 40rpx; width: 90%;margin-left: 35rpx;" >
+  <van-button type="primary" size="large" bind:click="update_data">更新数据</van-button>
+</view>

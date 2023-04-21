@@ -1,0 +1,172 @@
+<!--pages/user/user.wxml-->
+<view class="dis-flex_flex-row_just-sapbet pad_box  user_backcolor">
+  <!-- <image class="bg" src="{{user.user_message.avatarUrl}}" style="margin-right: 10rpx;">
+  </image> -->
+  <view class="userhead" style="width:50%">
+    <image src="{{user.user_message.avatarUrl}}" class="userImg"></image>
+    <text class="userText">{{user.user_message.nickName}}</text>
+  </view>
+  
+  <navigator url="../user_message_upload/user_message_upload" style="margin-right: 20rpx;">
+    <text class="changeUserMessageText">修改个人信息</text>
+  </navigator>
+
+  <view></view>
+</view>
+<!-- 科学频道 -->
+<view class="dis-flex_flex-col_just-cen pad_box ab_case_list" >
+  <view class="dis-flex_flex-row_just-fsta">
+       <text style="font-size:30rpx;color: #888888;  padding-left: 10rpx;" 
+       class="dis-flex_flex-row_just-fsta">宣传频道</text>
+    </view>
+  <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+
+  <navigator class="dis-flex_flex-row_just-fsta pad_box ab_list_view" url="../video/video">
+    <image src="../../images/user/video.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">福建文化视频</text>
+  </navigator>
+  <navigator class="dis-flex_flex-row_just-fsta pad_box ab_list_view" url="../policy/policy">
+    <image src="../../images/user/policy.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">福建知识加油站</text>
+  </navigator>
+</view>
+<view class="dis-flex_flex-row_just-cen pad_box box">
+  <view class="dis-flex_flex-col_just-cen pad_box user_order">
+    <view class="dis-flex_flex-row_just-fsta">
+       <text style="font-size:30rpx;  padding-left: 10rpx;" class="dis-flex_flex-row_just-fsta"> 商品详情</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-sapbet">
+          <navigator class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" 
+          url="../OrderMessage/OrderMessage">
+              <image src="../../images/user/order_message.png" class="user_icon"></image>
+              <text>已购信息</text>
+          </navigator>
+          <!-- <navigator class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" 
+          url="../OrderMessage/OrderMessage?active=1">  
+              <image src="../../images/user/logistics.png" class="user_icon"></image>
+              <text>待收货</text>
+          </navigator>
+          <navigator class="dis-flex_flex-col_just-sapbet"  style="height: 120rpx;" 
+          url="../OrderMessage/OrderMessage">  
+              <image src="../../images/user/get.png" class="user_icon"></image>
+              <text>已收货</text>
+          </navigator> -->
+          <!-- // -->
+          <navigator class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" 
+          url="../after_sales/after_sales">
+              <image src="../../images/user/after_sales.png" class="user_icon"></image>
+              <text>售后服务</text>
+          </navigator>
+    </view>
+  </view>
+</view>
+<!--  -->
+  
+<view class="dis-flex_flex-col_just-cen pad_box ab_case_list" >
+  <view class="dis-flex_flex-row_just-fsta">
+       <text style="font-size:30rpx;color: #888888;  padding-left: 10rpx;" 
+       class="dis-flex_flex-row_just-fsta"> 基础功能</text>
+    </view>
+  <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+
+  <view class="dis-flex_flex-row_just-fsta pad_box ab_list_view" bindtap="login_open">
+    <image src="../../images/user/admin.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">商品管理</text>
+  </view>
+  <view class="dis-flex_flex-row_just-fsta pad_box ab_list_view" bindtap="my_address">
+    <image src="../../images/user/address.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">收货地址修改</text>
+  </view>
+  <navigator class="dis-flex_flex-row_just-fsta pad_box ab_list_view" url="../user_message_upload/user_message_upload">
+    <image src="../../images/user/update_user.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">用户信息修改</text>
+  </navigator>
+  <navigator class="dis-flex_flex-row_just-fsta pad_box ab_list_view" url="../customer/customer">
+    <image src="../../images/user/kefu.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">专属客服热线</text>
+  </navigator>
+  <view class="dis-flex_flex-row_just-fsta pad_box ab_list_view" bindtap="showPop">
+    <image src="../../images/service_img/teams.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">团队</text>
+  </view>
+  <navigator class="dis-flex_flex-row_just-fsta pad_box ab_list_view" url="../customer/customer" url="../Qr_code/Qr_code">
+    <image src="../../images/service_img/code.png" class="ab_list_img"></image>
+      <text class="ab_case_list_text">二维码</text>
+  </navigator>
+</view>
+<!-- 团队  -->
+<view class="about" bindtap="showPop" style="display:{{about}};">
+  <view class="content">
+    <view class="img">
+      <image src="../../images/logo.jpg"></image>
+    </view>
+    <view class="font">绿沁之城</view>
+    <view class="font1">谢谢支持！</view>
+    <view class="font1">我们还处于体验版、具体内容还请以正式版为准</view>
+    <view class="font1">开发人员：黄俊贤 、 黄忠铭</view>
+    <view class="font1">指导老师：李斌</view>
+  </view>
+</view>
+<!-- 版本信息  -->
+<view class="about" bindtap="show_version_Pop" style="display:{{version}};">
+  <view class="content">
+    <view class="img">
+      <image src="../../images/logo.jpg"></image>
+    </view>
+    <view class="font">绿沁之城</view>
+    <view class="font1">版本编号：体验版 0.1.96 ea</view>
+    <view class="font1">使用说明：Vant Weapp UI组件库</view>
+    <view class="font2">我们的口号是：创建农产品销售新方式！</view>
+  </view>
+</view>
+
+
+
+<!-- 弹窗 -->
+<van-popup show="{{ if_show }}" round position="bottom" closeable custom-style="height:50%;" bind:close="login_close">
+  <view class="dis-flex_flex-col_just-fsta pad_box">
+    <view class="dis-flex_flex-row_just-cen" style="height: 100%;">
+      <text>商户登录</text>
+    </view>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 180rpx;">
+      <van-icon name="user-o"  size="35px"/>
+      <input type="text" placeholder="商户账号(临时号 admin)" style="margin-left: 20rpx;" data-name="admin_name" bindinput="input_login" />
+    </view>
+    <van-divider style="width:70%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+    <view class="dis-flex_flex-row_just-fsta" style="height: 70%; margin-top:90rpx;margin-left: 180rpx;">
+      <van-icon name="shield-o"  size="35px"/>
+      <input type="password" placeholder="账号密码(临时密码 111)" style="margin-left: 20rpx;" data-name="password" bindinput="input_login" />
+    </view>
+    <van-divider style="width:70%;"  custom-style="margin-top:10rpx; margin-bottom:10rpx"></van-divider>
+    <button style="background-color:#07c160; color: #fff; width: 70%; margin-top: 50rpx;" bindtap="loginInto">登录</button>
+  </view>
+</van-popup>
+
+
+<!--技术支持  -->
+<view class="dis-flex_flex-row_just-cen pad_box">
+  <view class="dis-flex_flex-col_just-cen pad_box user_order">
+
+    <view class="dis-flex_flex-row_just-fsta">
+       <text style="font-size:30rpx;  padding-left: 10rpx;" class="dis-flex_flex-row_just-fsta"> 技术支持</text>
+    </view>
+    <van-divider style="width:100%;" custom-style="margin-top:20rpx;margin-bottom:20rpx;"></van-divider>
+    <view class="dis-flex_flex-row_just-sapbet">
+      <navigator class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" url="../TeSupport/TeSupport">
+        <image src="../../images/service_img/TeSupport.png" class="user_icon"></image>
+              <text>技术支持</text>
+      </navigator>
+      <!-- <navigator></navigator> -->
+      <view class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" bindtap="show_version_Pop">
+        <image src="../../images/service_img/V_message.png" class="user_icon"></image>
+              <text>版本信息</text>
+      </view>
+
+      <navigator class="dis-flex_flex-col_just-sapbet" style="height: 120rpx;" url="../Problemc_sub/Problemc_sub">
+        <image src="../../images/service_img/problems.png" class="user_icon"></image>
+              <text>问题投诉</text>
+      </navigator>
+    </view>
+  </view>
+</view>

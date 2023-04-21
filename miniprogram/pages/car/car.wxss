@@ -1,0 +1,25 @@
+/* pages/car/car.wxss */
+.w_imp{
+  width: 100% !important;
+}
+.goods_text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.goods_case{
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  background-color: #ffffff;
+
+}
+
+.goods_img{
+  width: 150rpx ;
+  height: 150rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,39 @@
+/* pages/video/video.wxss */
+/* pages/service/service.wxss */
+.swiper_video{
+  height: 475rpx;
+}
+.subject_bg{
+  background-color: #2de3a1;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+.subject_text{
+  font-weight: 800 ;
+  font-size: 35rpx;
+}
+
+.service_video{
+ width: 100%;
+ margin-top: 28rpx;
+ /* 这里控制小白点 */
+}
+.service_banner{
+  margin-top: 20rpx;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  width: 112rpx;
+  height: 152rpx;
+}
+.service_banner_image{
+  width: 110rpx;
+  height: 110rpx;
+}
+.service_banner_text{
+  font-weight: 600;
+  font-size: 28rpx;
+}
+

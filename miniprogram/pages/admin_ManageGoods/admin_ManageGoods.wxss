@@ -1,0 +1,26 @@
+/* pages/admin_ManageGoods/admin_ManageGoods.wxss */
+.head{
+  background-color: #41924B;
+  height: 6vh;
+}
+.search{
+  background-color: #ffffff;
+  width: 70%;
+  height: 70%;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+}
+
+.goods_img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+
+.van-card-full {
+  width: 100%;
+}
+
+.van-card-full .van-card{
+  background-color: #ffffff;
+}
